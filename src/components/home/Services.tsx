@@ -1,101 +1,85 @@
-import { servicesData } from "@/data";
-import { motion, useInView } from "framer-motion";
-import Image from "next/image";
-import { useRef } from "react";
+// src/components/home/Services.tsx
+import { motion } from "framer-motion";
+import { servicesData } from "@/data/services.data";
 
-const variants = {
-  initial: {
-    x: -500,
-    y: 100,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
+const containerVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 1,
-      staggerChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.15, duration: 0.6, ease: "easeOut" },
   },
 };
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.98 },
+  visible: { opacity: 1, y: 0, scale: 1 },
+};
+
 export const Services = () => {
-  const ref = useRef(null);
-
-  const isInView = useInView(ref, { margin: "-100px" });
-
   return (
-    <motion.div
-      ref={ref}
-      variants={variants}
-      initial="initial"
-      animate="animate"
-      className="h-full flex flex-col gap-4 justify-between p-4"
-    >
-      <motion.article
-        variants={variants}
-        className="flex-1 self-center md:self-end flex flex-col md:flex-row items-center gap-4 text-center md:text-start"
-      >
-        <p className="max-w-[30ch] font-extralight text-xl text-gray-500 text-right">
-          I focus on helping your brand grow and move forward
-        </p>
-        <hr className="w-72 md:w-96 border-0 border-t border-gray-500" />
-      </motion.article>
-      <motion.article
-        variants={variants}
-        className="flex-[2] flex flex-col gap-4 items-center w-full md:w-auto"
-      >
-        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-12 text-center md:text-start">
-          <Image
-            src="/assets/people.webp"
-            alt="people"
-            width={288}
-            height={96}
-            className="hidden sm:block w-48 lg:w-56 2xl:w-72 h-12 lg:h-20 2xl:h-24 rounded-3xl object-cover"
-          />
-          <h4 className="capitalize text-4xl lg:text-6xl 2xl:text-8xl font-thin">
-            <b className="font-semibold text-white hover:text-orange-500">
-              Unique
-            </b>{" "}
-            Ideas
-          </h4>
+    <section id="services" className="pt-10 pb-20 px-4 md:px-12 lg:px-24">
+      <div className="max-w-6xl mx-auto">
+        {/* Heading */}
+        <div className="text-center mb-12">
+          <p className="uppercase tracking-[0.25em] text-sm text-purple-300">
+            Skills & Stack
+          </p>
+          <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+            What I <span className="text-orange-400">Build With</span>
+          </h2>
+          <p className="mt-4 text-slate-300 max-w-2xl mx-auto">
+            A mix of AI, data, and modern web technologies I use across projects
+            like Bruce County Smart Beach, IMDB analysis, and this portfolio.
+          </p>
         </div>
-        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-12 text-center md:text-start">
-          <h4 className="capitalize text-4xl lg:text-6xl 2xl:text-8xl font-thin">
-            <b className="font-semibold text-white hover:text-orange-500">
-              For Your
-            </b>{" "}
-            Business
-          </h4>
-          <button
-            type="button"
-            className="uppercase w-36 lg:w-48 2xl:w-64 h-12 lg:h-16 2xl:h-20 rounded-[50px] text-black bg-orange-400 border-none text-base lg:text-xl 2xl:text-2xl cursor-pointer hover:bg-orange-500"
-          >
-            What we do?
-          </button>
-        </div>
-      </motion.article>
-      <motion.article
-        variants={variants}
-        className="flex-[2] flex flex-col md:flex-row w-full max-w-7xl m-auto"
-      >
-        {servicesData.map(item => (
-          <motion.div
-            key={item.title}
-            className="border-0 md:border border-gray-500 flex flex-col items-center justify-between gap-4 p-2 md:p-6 2xl:p-8 text-gray-100 hover:bg-gray-100 hover:text-black rounded-md"
-          >
-            <h5 className="text-xl font-semibold">{item.title}</h5>
-            <p className="hidden md:block line-clamp-2">{item.description}</p>
-            <button
-              type="button"
-              className="bg-transparent md:bg-orange-400 border border-orange-400 md:border-none rounded-lg text-orange-400 md:text-black w-full p-2 cursor-pointer md:hover:bg-orange-500"
+
+        {/* Cards */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid gap-8 md:grid-cols-3"
+        >
+          {servicesData.map((service) => (
+            <motion.article
+              key={service.id}
+              variants={cardVariants}
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="relative h-full rounded-3xl bg-white/5 border border-white/10 
+                         px-6 py-8 flex flex-col shadow-[0_0_40px_rgba(0,0,0,0.4)] 
+                         backdrop-blur-sm transition-colors hover:border-purple-400/60"
             >
-              Go
-            </button>
-          </motion.div>
-        ))}
-      </motion.article>
-    </motion.div>
+              {/* Glow circle */}
+              <div className="absolute -top-6 left-8 w-10 h-10 rounded-full border border-purple-300/60" />
+
+              <h3 className="text-xl md:text-2xl font-semibold text-white mb-2">
+                {service.title}
+              </h3>
+              <p className="text-sm text-purple-200 mb-3">
+                {service.highlight}
+              </p>
+              <p className="text-sm text-slate-300 leading-relaxed mb-5">
+                {service.description}
+              </p>
+
+              {/* Tags */}
+              <div className="mt-auto flex flex-wrap gap-2">
+                {service.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs px-3 py-1 rounded-full bg-purple-600/30 
+                               text-purple-100 border border-purple-500/40"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.article>
+          ))}
+        </motion.div>
+      </div>
+    </section>
   );
 };

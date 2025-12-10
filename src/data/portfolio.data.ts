@@ -1,40 +1,33 @@
-const currentUrl = "https://github.com/ikramdeveloper";
+const githubUrl = "https://github.com/Vybhav031";
 
 export const portfolioData = [
   {
     id: 1,
-    title: "React Commerce",
-    image:
-      "https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    title: "Smart Beach – Bruce County",
+    image: "/assets/beach.jpg",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    link: currentUrl,
+      "AI-powered system for Station Beach using YOLOv8, Faster R-CNN, and Detectron2 to perform real-time crowd density estimation with an optimized crop-and-detect pipeline.",
+    link: "https://github.com/Vybhav031/BRUCE-COUNTY-SMART-BEACH---BEACH-DENSITY-USAGE-MAP",
+    tags: ["Python", "YOLOv8", "Faster R-CNN", "Detectron2", "Edge AI"],
   },
+
   {
     id: 2,
-    title: "Next.js Blog",
-    image:
-      "https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    title: "Longformer — Long-Document Transformer Classifier",
+    image: "/assets/transformer.jpg",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    link: currentUrl,
+      "High-capacity NLP classifier built using Longformer for processing long-form documents with efficient sliding-window attention and robust text classification.",
+    link: "https://github.com/Vybhav031/Longformer-The-Long-Document-Transformer",
+    tags: ["Python", "NLP", "Longformer", "Transformers", "Deep Learning"],
   },
+
   {
     id: 3,
-    title: "Vanilla JS App",
-    image:
-      "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    title: "Animated Developer Portfolio",
+    image: "/assets/portfolio.png",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    link: currentUrl,
-  },
-  {
-    id: 4,
-    title: "Music App",
-    image:
-      "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    link: currentUrl,
+      "A fully animated portfolio website built using Next.js, TypeScript, Tailwind CSS, and Framer Motion.",
+    link: githubUrl,
+    tags: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
   },
 ];

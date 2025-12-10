@@ -49,13 +49,13 @@ export const Hero = () => {
           variants={textVariants}
           className="text-2xl md:text-4xl text-purple-shade spacing tracking-widest uppercase"
         >
-          Ikram Ul Haq
+          Vaibhav Vaghela
         </motion.h2>
         <motion.h1
           variants={textVariants}
           className="text-4xl md:text-6xl 2xl:text-8xl capitalize"
         >
-          Full Stack Developer
+          ML Developer | Web Developer
         </motion.h1>
         <motion.div
           variants={textVariants}
@@ -77,6 +77,16 @@ export const Hero = () => {
             >
               Contact Me
             </motion.button>
+          </Link>
+          <Link href="/Vaibhav_Vaghela(AI engineerrr).pdf" target="_blank">
+          <motion.button
+             type="button"
+             variants={textVariants}
+             className="p-2 md:p-4 border border-purple-400 rounded-lg bg-transparent text-purple-400 
+               font-light text-base cursor-pointer hover:bg-purple-400 hover:text-black transition-all"
+            >
+              Resume
+          </motion.button>
           </Link>
         </motion.div>
         <motion.img

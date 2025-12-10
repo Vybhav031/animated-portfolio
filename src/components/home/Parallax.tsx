@@ -32,7 +32,7 @@ export const Parallax = ({ type }: ParallaxProps) => {
         style={{ y: yText }}
         className="capitalize text-center md:text-start text-8xl md:text-6xl"
       >
-        {type === "services" ? "What We Do?" : "What We did?"}
+      {type === "services" ? "What I Build?" : "What I did?"}
       </motion.h1>
       <motion.div
         className={cn(

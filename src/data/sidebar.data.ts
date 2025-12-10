@@ -4,12 +4,12 @@ export const linksList = [
     value: "home",
   },
   {
-    label: "Services",
-    value: "services",
+    label: "About",
+    value: "about",
   },
   {
-    label: "Portfolio",
-    value: "portfolio",
+    label: "Projects",
+    value: "projects",
   },
   {
     label: "Contact",

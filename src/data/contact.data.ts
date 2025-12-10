@@ -1,14 +1,14 @@
 export const contactInfo = [
   {
     title: "Email",
-    info: "ikramdeveloper24@gmail.com",
+    info: "vaibhavvaghela2010@gmail.com",
   },
   {
     title: "Phone",
-    info: "+92 335 0044927",
+    info: "+1(249)-989-0761",
   },
   {
     title: "Address",
-    info: "Lahore, Pakistan",
+    info: "Manitoba, Canada",
   },
 ];
